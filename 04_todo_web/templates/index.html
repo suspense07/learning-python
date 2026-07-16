@@ -5,6 +5,47 @@
 <head>
     <meta charset="UTF-8">
     <title>代办清单</title>
+    <style>
+        body {
+            background: #f0f0f0;
+            font-family: sans-serif;
+            max-width: 500px;
+            margin: 40px auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form[action="/add"] {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        form[action="/add"] input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        li {
+            background: white;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button {
+            background: #0071e3;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
