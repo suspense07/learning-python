@@ -16,6 +16,17 @@
             text-align: center;
             color: #333;
         }
+        form[action="/add"] {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        form[action="/add"] input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
         li {
             background: white;
             padding: 12px;
@@ -46,20 +57,20 @@
     </form>
     
     <ul>
-        {% for name,done in tasks.items() %}
+        {% for task in tasks %}
             <li>
-            {% if done == 1 %}
-                <del>{{ name }}</del>
+            {% if task.done == 1 %}
+                <del>{{ task.name }}</del>
             {% else %}
-                {{ name }}
+                {{ task.name }}
             {% endif %}
 
             <form action="/done" method="POST" style="display: inline;">
-                <input type="hidden" name="task_name" value="{{ name }}">
+                <input type="hidden" name="task_id" value="{{ task.id }}">
                 <button type="submit">完成</button>
             </form>
             <form action="/delete" method="POST" style="display: inline;">
-                <input type="hidden" name="task_name" value="{{ name }}">
+                <input type="hidden" name="task_id" value="{{ task.id }}">
                 <button type="submit">删除</button>
             </form>
             </li>
